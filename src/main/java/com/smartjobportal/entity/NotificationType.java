@@ -1,0 +1,12 @@
+package com.smartjobportal.entity;
+
+public enum NotificationType {
+    JOB_APPLIED,
+    APPLICATION_STATUS_CHANGED,
+    INTERVIEW_SCHEDULED,
+    INTERVIEW_UPDATED,
+    INTERVIEW_CANCELLED,
+    NEW_APPLICANT,
+    JOB_RECOMMENDATION,
+    SYSTEM_NOTIFICATION
+}
