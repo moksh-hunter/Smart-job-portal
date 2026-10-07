@@ -27,7 +27,7 @@ public class OpenApiConfig {
                         .contact(new Contact()
                                 .name("Smart Job Portal Team")
                                 .email("support@smartjobportal.com")
-                                .url("https://smartjobportal.com"))
+                                .url("https://github.com/moksh-hunter/Smart-job-portal"))
                         .license(new License()
                                 .name("MIT License")
                                 .url("https://opensource.org/licenses/MIT")))
