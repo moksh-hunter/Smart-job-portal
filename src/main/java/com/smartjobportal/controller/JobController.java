@@ -55,7 +55,7 @@ public class JobController {
         return ResponseEntity.ok(jobService.getJobById(id));
     }
 
-    @GetMapping("/search")
+    @GetMapping({"", "/search"})
     @Operation(summary = "Search jobs", description = "Public endpoint to search and filter open jobs")
     public ResponseEntity<ApiResponse<PagedResponse<JobResponse>>> searchJobs(
             @RequestParam(required = false) String keyword,
