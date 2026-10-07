@@ -5,6 +5,12 @@ echo           Starting Smart Job Portal Backend
 echo ===================================================
 echo.
 
+:: Auto-kill any old process lingering on port 8080
+for /f "tokens=5" %%a in ('netstat -aon ^| findstr :8080 ^| findstr LISTENING') do (
+    echo Port 8080 is currently occupied by PID %%a. Freeing port 8080...
+    taskkill /F /PID %%a >nul 2>&1
+)
+
 :: Check Java
 if exist "C:\Program Files\Java\jdk-21" (
     set "JAVA_HOME=C:\Program Files\Java\jdk-21"
@@ -13,9 +19,6 @@ if exist "C:\Program Files\Java\jdk-21" (
 
 cd /d "%~dp0"
 
-echo Java Version:
-java -version
-echo.
 echo Starting application with Dev Profile (H2 In-Memory DB)...
 echo Once started, open your browser at:
 echo http://localhost:8080/swagger-ui/index.html
